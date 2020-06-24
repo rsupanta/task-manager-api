@@ -101,7 +101,7 @@ router.delete("/tasks/:id", auth, async (req, res) => {
       author: req.user._id,
     });
 
-    if (!task) return res.status(400).send({ error: "No task found" });
+    if (!task) return res.status(404).send({ error: "No task found" });
 
     res.send(task);
   } catch (e) {
